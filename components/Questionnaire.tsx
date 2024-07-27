@@ -285,16 +285,7 @@ const Questionnaire = ({
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center flex-row gap-5">
-              {currentQuestionIndex != 0 && (
-                <button
-                  onClick={handlePrev}
-                  disabled={currentQuestionIndex === 0}
-                  className="bg-blue-500 text-white w-32 px-8 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Previous
-                </button>
-              )}
+            <div className="flex justify-center items-center flex-col gap-5">
               {currentQuestionIndex != questionsList.length - 1 && (
                 <button
                   onClick={handleNext}
@@ -305,6 +296,16 @@ const Questionnaire = ({
                   }
                 >
                   Next
+                </button>
+              )}
+
+              {currentQuestionIndex != 0 && (
+                <button
+                  onClick={handlePrev}
+                  disabled={currentQuestionIndex === 0}
+                  className="bg-blue-500 text-white w-32 px-8 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Previous
                 </button>
               )}
               {currentQuestionIndex === 20 && (
